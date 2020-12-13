@@ -2,7 +2,7 @@
 MCU = atmega32u4
 
 # Bootloader
-BOOTLOADER = caterina
+BOOTLOADER = halfkay
 
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the
@@ -15,7 +15,7 @@ BOOTLOADER = caterina
 #     does not *change* the processor frequency - it should merely be updated to
 #     reflect the processor speed set externally so that the code can use accurate
 #     software delays.
-F_CPU = 8000000
+F_CPU = 16000000
 
 #
 # LUFA specific
@@ -41,10 +41,8 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 
 
 # Boot Section Size in *bytes*
-OPT_DEFS += -DBOOTLOADER_SIZE=4096
+#OPT_DEFS += -DBOOTLOADER_SIZE=4096
 
-# Space saving
-EXTRAFLAGS += -flto
 
 # Build Options
 #   comment out to disable the options.
@@ -52,11 +50,11 @@ EXTRAFLAGS += -flto
 BOOTMAGIC_ENABLE ?= no	# Virtual DIP switch configuration(+1000)
 MOUSEKEY_ENABLE ?= no	# Mouse keys(+4700)
 EXTRAKEY_ENABLE ?= no	# Audio control and System control(+450)
-CONSOLE_ENABLE ?= no	# Console for debug(+400)
+CONSOLE_ENABLE ?= yes	# Console for debug(+400)
 COMMAND_ENABLE ?= yes    # Commands for debug and configuration
 SLEEP_LED_ENABLE ?= no  # Breathing sleep LED during USB suspend
 NKRO_ENABLE ?= yes		# USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 BACKLIGHT_ENABLE ?= no  # Enable keyboard backlight functionality
 AUDIO_ENABLE ?= no
 RGBLIGHT_ENABLE = yes
-BLUETOOTH = AdafruitBLE
+#BLUETOOTH = AdafruitBLE
